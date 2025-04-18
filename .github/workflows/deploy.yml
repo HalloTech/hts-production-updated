@@ -45,6 +45,6 @@ jobs:  # was 'job' before
 
             echo "Running new container..."
             docker run -d -p 8080:80 --name hts-container murtaza007/hts-image:latest
-
+            sudo systemctl start nginx
 
             echo "✅ Deployment successful"
