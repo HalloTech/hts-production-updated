@@ -36,6 +36,9 @@ jobs:  # was 'job' before
             echo "Pulling latest image from Docker Hub..."
             docker pull murtaza007/hts-image:latest
 
+            echo "Freeing up port 80..."
+            sudo fuser -k 80/tcp || true
+
             echo "Stopping and removing old container..."
             docker stop hts-container || true
             docker rm hts-container || true
