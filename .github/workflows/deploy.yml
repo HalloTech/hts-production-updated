@@ -12,8 +12,22 @@ jobs:  # was 'job' before
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker image
+        run: |
+          docker build -t murtaza007/hts-image:latest .
+          docker push murtaza007/hts-image:latest
+
       - name: Deploy to EC2 via SSH
-        uses: appleboy/ssh-action@v1.0.0  # fixed: was a description instead of actual action
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
