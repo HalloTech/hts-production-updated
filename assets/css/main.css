@@ -3434,7 +3434,7 @@ section,
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(114, 220, 199, 0.4);
   backdrop-filter: blur(15px);
   border-radius: 15px;
   transition: transform 0.3s ease;
