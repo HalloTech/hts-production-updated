@@ -44,6 +44,7 @@ jobs:  # was 'job' before
             docker rm hts-container || true
 
             echo "Running new container..."
-            docker run -d -p 80:80 --name hts-container murtaza007/hts-image:latest
+            docker run -d -p 8080:80 --name hts-container murtaza007/hts-image:latest
+
 
             echo "✅ Deployment successful"
