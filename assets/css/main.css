@@ -3537,3 +3537,17 @@ section,
         width: 20px;
         display: inline-block;
         color: #fff; }
+
+        .gradient-link {
+          background: linear-gradient(90deg, #1500ff, #fe92f7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 600;
+          transition: opacity 0.3s ease;
+        }
+        
+        .gradient-link:hover {
+          opacity: 0.8;
+        }
+        
+        
