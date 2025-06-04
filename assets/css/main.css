@@ -3550,4 +3550,14 @@ section,
           opacity: 0.8;
         }
         
+        .collaborate-link {
+          background: linear-gradient(90deg, #ff0033, #fe92f7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: 600;
+          transition: opacity 0.3s ease;
+        }
+        .cooaborate-link:hover {
+          opacity: 0.1;
+        }
         
