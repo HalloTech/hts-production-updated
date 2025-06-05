@@ -34,17 +34,17 @@ jobs:  # was 'job' before
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             echo "Pulling latest image from Docker Hub..."
-            docker pull murtaza007/hts-2025:latest
+            sudo docker pull murtaza007/hts-2025:latest
 
             echo "Freeing up port 80..."
             sudo fuser -k 80/tcp || true
 
             echo "Stopping and removing old container..."
-            docker stop hts-container || true
-            docker rm hts-container || true
+            sudo docker stop hts-container-2025 || true
+            sudo docker rm hts-container-2025 || true
 
             echo "Running new container..."
-            docker run -d -p 8080:80 --name hts-container-2025 murtaza007/hts-2025:latest
+            sudo docker run -d -p 8080:80 --name hts-container-2025 murtaza007/hts-2025:latest
             sudo systemctl start nginx
 
             echo "✅ Deployment successful"
