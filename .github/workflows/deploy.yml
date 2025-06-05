@@ -23,8 +23,8 @@ jobs:  # was 'job' before
 
       - name: Build and Push Docker image
         run: |
-          docker build -t murtaza007/hts-image:latest .
-          docker push murtaza007/hts-image:latest
+          docker build -t murtaza007/hts-2025:latest .
+          docker push murtaza007/hts-2025:latest
 
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.0.0
@@ -34,7 +34,7 @@ jobs:  # was 'job' before
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             echo "Pulling latest image from Docker Hub..."
-            docker pull murtaza007/hts-image:latest
+            docker pull murtaza007/hts-2025:latest
 
             echo "Freeing up port 80..."
             sudo fuser -k 80/tcp || true
@@ -44,7 +44,7 @@ jobs:  # was 'job' before
             docker rm hts-container || true
 
             echo "Running new container..."
-            docker run -d -p 8080:80 --name hts-container murtaza007/hts-image:latest
+            docker run -d -p 8080:80 --name hts-container-2025 murtaza007/hts-2025:latest
             sudo systemctl start nginx
 
             echo "✅ Deployment successful"

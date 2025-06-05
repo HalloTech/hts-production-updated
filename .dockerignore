@@ -1,0 +1,23 @@
+# Ignore Git and version control
+.git
+.gitignore
+
+# Node or Python junk (if ever added)
+node_modules/
+__pycache__/
+
+# Logs and sensitive files
+*.log
+.env
+
+# Build or archive files
+*.zip
+*.tar
+*.gz
+
+# Docker stuff
+Dockerfile
+.dockerignore
+
+# System files
+.DS_Store
