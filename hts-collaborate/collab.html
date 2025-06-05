@@ -628,12 +628,35 @@
 
   </main>
   <div class="container text-center mt-4 bg-black text-white py-4">
-        <p class="text-sm">
-          © <span>Copyright 2025</span> 
-          <strong class="px-1 font-semibold">HalloTech Solutions</strong> 
-          <span>All Rights Reserved</span>
-        </p>
-      </div>
+    <p class="text-sm">
+      © <span>Copyright 2025</span> 
+      <strong class="px-1 font-semibold">HalloTech Solutions</strong> 
+      <span>All Rights Reserved</span> | 
+      <a href="#" onclick="togglePolicyModal()" class="underline hover:text-gray-400">Policy</a>
+    </p>
+  </div>
+  <div id="policyModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="bg-white text-black max-w-2xl w-full rounded-xl p-6 relative shadow-lg">
+      <button onclick="togglePolicyModal()" class="absolute top-2 right-4 text-gray-500 text-xl font-bold">&times;</button>
+      <h2 class="text-xl font-semibold mb-4">HTS Freelancing Policy</h2>
+      <p class="text-sm leading-relaxed">
+        At HalloTech Solutions (HTS), we aim to empower freelancers by providing high-quality client exposure and structured project management under our brand.
+      </p>
+      <ul class="text-sm list-disc pl-5 mt-3 space-y-1">
+        <li>All freelancers working via HTS must disclose their projects to HTS for profile showcasing.</li>
+        <li>HTS reserves the right to feature selected freelancer work in client portfolios, marketing assets, or client showcases.</li>
+        <li>HTS will charge a standard 30% commission on the total project cost, ensuring platform operation, lead generation, and quality control.</li>
+        <li>Payments are processed only upon client approval and final handover. Disputes will be handled via our support channel within 3 business days.</li>
+        <li>Freelancers must maintain professional standards, timely delivery, and transparent communication throughout the project cycle.</li>
+        <li>HTS reserves the right to blacklist freelancers violating trust, misrepresenting services, or bypassing the platform after getting leads.</li>
+      </ul>
+      <p class="text-sm mt-3">
+        By continuing to work with HTS, you agree to these terms and commit to delivering client-first outcomes.
+      </p>
+      <p class="text-xs text-gray-500 mt-2">Last updated: June 2025</p>
+    </div>
+  </div>
+    
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -671,7 +694,12 @@
     
   </div>
 </div>
-
+<script>
+  function togglePolicyModal() {
+    const modal = document.getElementById('policyModal');
+    modal.classList.toggle('hidden');
+  }
+</script>
 </body>
 
 </html>
