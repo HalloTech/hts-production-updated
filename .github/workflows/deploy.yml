@@ -34,6 +34,9 @@ jobs:  # was 'job' before
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
 
+            echo "Removing cached image if exists..."
+            sudo docker rmi -f murtaza007/hts-2025:latest || true
+
             echo "Pulling latest image from Docker Hub..."
             sudo docker pull murtaza007/hts-2025:latest
 
